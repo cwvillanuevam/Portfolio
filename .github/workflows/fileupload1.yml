@@ -12,8 +12,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
       - name: Build site
-        run: |
-          # Comandos para construir tu sitio web
+        run: bundle exec jekyll build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
