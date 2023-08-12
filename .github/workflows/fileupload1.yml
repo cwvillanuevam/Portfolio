@@ -1,0 +1,21 @@
+name: Publicar sitio web
+
+on:
+  push:
+    branches:
+      - main  # Reemplaza "main" con el nombre de tu rama principal
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Build site
+        run: |
+          # Comandos para construir tu sitio web
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.3
+        with:
+          branch: gh-pages
+          folder: ./public
