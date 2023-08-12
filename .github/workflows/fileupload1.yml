@@ -14,9 +14,7 @@ jobs:
       - name: Add Ruby executables to PATH
         run: echo 'export PATH="/home/runner/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $GITHUB_ENV
       - name: Install Bundler
-        run: gem install bundler --user-install
-      - name: Install Dependencies
-        run: bundle install --path vendor/bundle          
+        run: gem install bundler --user-install       
       - name: Build site
         run: bundle exec jekyll build
       - name: Deploy
