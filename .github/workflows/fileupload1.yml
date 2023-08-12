@@ -11,10 +11,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+      - name: Add Ruby executables to PATH in shell config
+        run: echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc
       - name: Install Bundler
-        run: gem install bundler --user-install
-      - name: Add Ruby executables to PATH
-        run: echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $GITHUB_ENV       
+        run: gem install bundler --user-install     
       - name: Build site
         run: bundle exec jekyll build
       - name: Deploy
