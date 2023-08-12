@@ -11,10 +11,10 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+      - name: Install Bundler
+        run: gem install bundler --user-install
       - name: Install Dependencies
-        run: |
-          gem install bundler
-          bundle install        
+        run: bundle install --path vendor/bundle          
       - name: Build site
         run: bundle exec jekyll build
       - name: Deploy
