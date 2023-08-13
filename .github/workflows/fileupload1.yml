@@ -14,7 +14,7 @@ jobs:
       - name: Add Ruby executables to PATH in shell config
         run: echo 'export PATH=$PATH:/home/runner/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc
       - name: Install Bundler
-        run: gem install bundler     
+        run: gem install bundler --user-install --no-document     
       - name: Build site
         run: bundle exec jekyll build
       - name: Deploy
