@@ -48,4 +48,4 @@ jobs:
         with:
           branch: main
           folder: ./public
-          token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
+          token: ${{secrets.ACTIONS_DEPLOY_TOKEN}}
