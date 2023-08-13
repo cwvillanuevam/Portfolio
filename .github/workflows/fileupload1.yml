@@ -16,7 +16,7 @@ jobs:
       - name: Install Bundler
         run: gem install bundler --user-install --no-document     
       - name: Build site
-        run: bundle exec jekyll build
+        run: jekyll build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
