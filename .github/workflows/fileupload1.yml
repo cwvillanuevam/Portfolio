@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_DEPLOY_TOKEN: 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
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -46,3 +48,4 @@ jobs:
         with:
           branch: main
           folder: ./public
+          token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
