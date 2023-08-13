@@ -1,8 +1,0 @@
-# Configuración de Jekyll
-title: Portfolio
-description: This web page will contain my portfolio
-author: Carlos Wyller Villanueva Machado
-# url: http://localhost:4000
-
-# Configuración de GitHub Pages
-remote_theme: cwvillanuevam/Portfolio
