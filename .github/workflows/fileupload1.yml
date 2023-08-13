@@ -13,10 +13,22 @@ jobs:
         uses: actions/checkout@v2
       - name: Add Ruby executables to PATH in shell config
         run: echo 'export PATH=$PATH:/home/runner/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc
-      - name: Install Bundler
-        run: gem install bundler --user-install --no-document   
+      - name: Install Bundler and dependencies
+        run: |
+          gem install bundler
+          bundle install
+        env:
+          BUNDLE_PATH: vendor/bundle
+          GEM_HOME: $HOME/.gem
+          PATH: $HOME/.gem/ruby/3.0.0/bin:$PATH
       - name: Install Jekyll
         run: gem install jekyll --user-install --no-document 
+      - name: Install gems
+        run: bundle install
+        env:
+          BUNDLE_PATH: vendor/bundle
+          GEM_HOME: $HOME/.gem
+          PATH: $HOME/.gem/ruby/3.0.0/bin:$PATH
       - name: Build site
         run: bundle exec jekyll build
       - name: Deploy
