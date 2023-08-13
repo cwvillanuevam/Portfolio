@@ -16,7 +16,7 @@ jobs:
       - name: Install Bundler
         run: gem install bundler --user-install --no-document   
       - name: Install Jekyll
-        run: gem install jekyll
+        run: gem install jekyll --user-install
       - name: Build site
         run: jekyll build
       - name: Deploy
