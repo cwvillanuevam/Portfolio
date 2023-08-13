@@ -46,5 +46,6 @@ jobs:
         with:
           branch: main
           folder: ./public
-          username: ${{ secrets.GHU }}
-          password: ${{ secrets.GHP }}
+          token: ${{ secrets.MI_VARIABLE_ENVIRONMENT }}
+          # username: ${{ secrets.GHU }}
+          # password: ${{ secrets.GHP }}
