@@ -8,9 +8,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      ACTIONS_DEPLOY_TOKEN: ${{ secrets.MI_VARIABLE_DE_ENTORNO }}
-      
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -49,4 +46,5 @@ jobs:
         with:
           branch: main
           folder: ./public
-          token: ${{env.ACTIONS_DEPLOY_TOKEN}}
+          username: ${{ secrets.GHU }}
+          password: ${{ secrets.GHP }}
