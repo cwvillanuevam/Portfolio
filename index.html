@@ -4,21 +4,13 @@
 	<meta charset="UTF-8">
 	<title id="titulo"></title>
 	<link rel="stylesheet" href="estiloA.css">
-	<script>
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				document.getElementById("titulo").innerHTML = this.responseText;
-				document.querySelector("h1").innerHTML = this.responseText;
-			}
-		};
-		xhttp.open("GET", "Source/Title.txt", true);
-		xhttp.send();
-	</script>
+	<script src="BSel.js"></script>
 </head>
 <body>
 	<header>
 		<h1>Mi sitio web</h1>
+		<h2>Personal Objectives</iframe></h2>
+		<p> Description</p>
 		<nav>
 			<ul>
 				<li><a href="index.html">Inicio</a></li>
@@ -31,7 +23,11 @@
 	<main>
 		<h2>¡Bienvenidos!</h2>
 		<p>Gracias por visitar mi sitio web. Aquí podrás encontrar información sobre mis proyectos académicos y los servicios que ofrezco. Si necesitas contactarme, no dudes en hacerlo.</p>
-		<button class="btn-cambiar-estilo">Cambiar estilo</button>
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary" onclick="readEnglish()">English</button>
+			<button type="button" class="btn btn-primary" onclick="readSpanish()">Spanish</button>
+		</div>
+
 	</main>
 	<footer>
 		<p>&copy; Mi sitio web - Todos los derechos reservados</p>
