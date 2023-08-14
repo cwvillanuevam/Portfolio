@@ -6,3 +6,4 @@ author: Carlos Wyller Villanueva Machado
 
 # Configuración de GitHub Pages
 remote_theme: cwvillanuevam/Portfolio
+theme: minimal-mistakes-jekyll
